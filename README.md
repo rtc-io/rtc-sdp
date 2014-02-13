@@ -1,9 +1,9 @@
-# rtc-patchsdp
+# rtc-sdp
 
-This is a utility module for patching sdp.
+This is a utility module for intepreting and patching sdp.
 
 
-[![NPM](https://nodei.co/npm/rtc-patchsdp.png)](https://nodei.co/npm/rtc-patchsdp/)
+[![NPM](https://nodei.co/npm/rtc-sdp.png)](https://nodei.co/npm/rtc-sdp/)
 
 [![Build Status](https://travis-ci.org/rtc-io/rtc-patchsdp.png?branch=master)](https://travis-ci.org/rtc-io/rtc-patchsdp)
 [![unstable](http://hughsk.github.io/stability-badges/dist/unstable.svg)](http://github.com/hughsk/stability-badges)
@@ -11,6 +11,14 @@ This is a utility module for patching sdp.
 ## Example Usage
 
 To be completed.
+
+## Reference
+
+### addCandidate(data)
+
+Modify the sdp to include candidates as denoted by the data
+
+### toString() => sdp string
 
 ## License(s)
 
