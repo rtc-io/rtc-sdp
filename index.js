@@ -11,9 +11,24 @@ var reLineBreak = /\n\r?/;
   ## Example Usage
 
   To be completed.
-**/
-module.exports = function(sdp, opts) {
-  var lines = sdp.split(reLineBreak);
 
-  console.log('got lines: ', sdp);
+  ## Reference
+
+**/
+module.exports = function(sdp) {
+  var lines = sdp.split(reLineBreak);
+  var ops = {};
+
+  // identify lines
+
+
+  /**
+    ### addCandidate(data) => sdp string
+
+  **/
+  ops.addCandidate = function(data) {
+
+  };
+
+  return ops;
 };

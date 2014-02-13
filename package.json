@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/rtc-io/rtc-patchsdp/issues"
   },
-  "homepage": "https://github.com/rtc-io/rtc-patchsdp"
+  "homepage": "https://github.com/rtc-io/rtc-patchsdp",
+  "devDependencies": {
+    "tape": "~2.4.2"
+  }
 }
