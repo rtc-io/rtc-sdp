@@ -5,7 +5,7 @@ This is a utility module for intepreting and patching sdp.
 
 [![NPM](https://nodei.co/npm/rtc-sdp.png)](https://nodei.co/npm/rtc-sdp/)
 
-[![Build Status](https://travis-ci.org/rtc-io/rtc-patchsdp.png?branch=master)](https://travis-ci.org/rtc-io/rtc-patchsdp)
+[![Build Status](https://travis-ci.org/rtc-io/rtc-sdp.png?branch=master)](https://travis-ci.org/rtc-io/rtc-sdp)
 [![unstable](http://hughsk.github.io/stability-badges/dist/unstable.svg)](http://github.com/hughsk/stability-badges)
 
 ## Example Usage
