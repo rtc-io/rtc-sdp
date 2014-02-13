@@ -1,5 +1,5 @@
 {
-  "name": "rtc-patchsdp",
+  "name": "rtc-sdp",
   "version": "0.0.0",
   "description": "rtc.io utility module for patching (munging) SDP",
   "main": "index.js",
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/rtc-io/rtc-patchsdp",
   "devDependencies": {
     "tape": "~2.4.2"
+  },
+  "dependencies": {
+    "whisk": "~0.4.1"
   }
 }
