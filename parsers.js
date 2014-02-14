@@ -18,7 +18,7 @@ exports.m = function(parsed, line) {
     return addChildLine;
   }
 
-  parsed.push(media);
+  parsed.push([ 'm', media ]);
 
   return addChildLine;
 };

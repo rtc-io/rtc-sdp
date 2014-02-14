@@ -3,6 +3,7 @@ var test = require('tape');
 var fs = require('fs');
 var baseSdp = fs.readFileSync(__dirname + '/fragments/test-answer-nocandidates.txt', 'utf8');
 var sdp;
+var reTrailingNewline = /\r?\n$/;
 
 test('parse the sdp', function(t) {
   t.plan(2);
@@ -12,5 +13,5 @@ test('parse the sdp', function(t) {
 
 test('serialize the sdp back to a string', function(t) {
   t.plan(1);
-  t.equal(sdp.toString(), baseSdp, 'original sdp recreated successfully');
+  t.equal(sdp.toString(), baseSdp.replace(reTrailingNewline, ''), 'original sdp recreated successfully');
 });
