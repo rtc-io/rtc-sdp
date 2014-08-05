@@ -1,2 +1,2 @@
 require('./parse');
-require('./candidates-add');
+require('./candidates-add-video');
