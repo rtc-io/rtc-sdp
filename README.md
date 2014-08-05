@@ -5,8 +5,7 @@ This is a utility module for intepreting and patching sdp.
 
 [![NPM](https://nodei.co/npm/rtc-sdp.png)](https://nodei.co/npm/rtc-sdp/)
 
-[![Build Status](https://travis-ci.org/rtc-io/rtc-sdp.png?branch=master)](https://travis-ci.org/rtc-io/rtc-sdp)
-[![unstable](http://hughsk.github.io/stability-badges/dist/unstable.svg)](http://github.com/hughsk/stability-badges)
+[![Build Status](https://img.shields.io/travis/rtc-io/rtc-sdp.svg?branch=master)](https://travis-ci.org/rtc-io/rtc-sdp) [![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/dominictarr/stability#unstable) 
 
 ## Example Usage
 
@@ -14,7 +13,7 @@ To be completed.
 
 ## Reference
 
-### addCandidate(data)
+### addIceCandidate(data)
 
 Modify the sdp to include candidates as denoted by the data
 
