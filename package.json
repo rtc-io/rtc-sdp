@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/rtc-io/rtc-sdp",
   "devDependencies": {
-    "tape": "^2.14.0"
+    "tape": "^3.0.3"
   },
   "dependencies": {
     "whisk": "^1.0.0"
