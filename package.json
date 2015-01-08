@@ -27,6 +27,6 @@
     "tape": "^2.14.0"
   },
   "dependencies": {
-    "whisk": "^0.6.2"
+    "whisk": "^1.0.0"
   }
 }
