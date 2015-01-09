@@ -19,11 +19,31 @@ Modify the sdp to include candidates as denoted by the data
 
 ### toString() => sdp string
 
+### `constrain-bandwidth(value) => fn(sdp) => sdp`
+
+Create a filter function that can apply a `b=AS` line to the supplied SDP.
+
+```js
+var constrainBandwidth = require('../constrain-bandwidth');
+var quickconnect = require('rtc-quickconnect');
+
+// create a conference with constrained bandwidth
+var conference = quickconnect('https://switchboard.rtc.io', {
+  room: 'sdpfilter-test',
+  sdpfilter: constrainBandwidth(128)
+});
+
+conference.on('call:started', function(id) {
+  console.log('call started with peer: ' + id);
+});
+
+```
+
 ## License(s)
 
 ### Apache 2.0
 
-Copyright 2014 National ICT Australia Limited (NICTA)
+Copyright 2015 National ICT Australia Limited (NICTA)
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
