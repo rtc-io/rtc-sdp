@@ -60,9 +60,6 @@ module.exports = function(sdp) {
     }
   });
 
-  // console.log(require('util').inspect(parsed, { colors: true, depth: null }));
-
-
   /**
     ### addIceCandidate(data)
 
