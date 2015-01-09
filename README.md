@@ -24,7 +24,7 @@ Modify the sdp to include candidates as denoted by the data
 Create a filter function that can apply a `b=AS` line to the supplied SDP.
 
 ```js
-var constrainBandwidth = require('../constrain-bandwidth');
+var constrainBandwidth = require('rtc-sdp/constrain-bandwidth');
 var quickconnect = require('rtc-quickconnect');
 
 // create a conference with constrained bandwidth
