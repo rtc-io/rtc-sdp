@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/rtc-io/rtc-sdp",
   "devDependencies": {
+    "rtc-quickconnect": "^4.1.0",
     "tape": "^3.0.3"
   },
   "dependencies": {
