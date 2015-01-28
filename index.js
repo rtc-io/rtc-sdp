@@ -16,11 +16,17 @@ var parsers = require('./parsers');
 
   This is a utility module for intepreting and patching sdp.
 
-  ## Example Usage
+  ## Usage
 
-  To be completed.
+  The `rtc-sdp` main module exposes a single function that is capable of
+  parsing lines of SDP, and providing an object allowing you to perform
+  operations on those parsed lines:
 
-  ## Reference
+  ```js
+  var sdp = require('rtc-sdp')(lines);
+  ```
+
+  The currently supported operations are listed below:
 
 **/
 module.exports = function(sdp) {
@@ -61,10 +67,11 @@ module.exports = function(sdp) {
   });
 
   /**
-    ### addIceCandidate(data)
+    ### `addIceCandidate(data)`
 
-    Modify the sdp to include candidates as denoted by the data
-  **/
+    Modify the sdp to include candidates as denoted by the data.
+
+**/
   ops.addIceCandidate = function(data) {
     var lineIndex = (data || {}).lineIndex || (data || {}).sdpMLineIndex;
     var mLine = typeof lineIndex != 'undefined' && findLine('m', lineIndex);
@@ -77,7 +84,12 @@ module.exports = function(sdp) {
   };
 
   /**
-    ### toString() => sdp string
+    ### `toString()`
+
+    Convert the SDP structure that is currently retained in memory, into a string
+    that can be provided to a `setLocalDescription` (or `setRemoteDescription`)
+    WebRTC call.
+
   **/
   ops.toString = function() {
     return parsed.map(function(line) {
@@ -86,6 +98,14 @@ module.exports = function(sdp) {
       return line.join('=');
     }).join('\n');
   };
+
+  /**
+    ## Additional Package Functions
+
+    There are additional functions included in the module to assign with
+    performing "single-shot" SDP filtering (or munging) operations:
+
+  **/
 
   return ops;
 };

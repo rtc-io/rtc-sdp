@@ -7,19 +7,38 @@ This is a utility module for intepreting and patching sdp.
 
 [![Build Status](https://img.shields.io/travis/rtc-io/rtc-sdp.svg?branch=master)](https://travis-ci.org/rtc-io/rtc-sdp) [![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/dominictarr/stability#unstable) 
 
-## Example Usage
+## Usage
 
-To be completed.
+The `rtc-sdp` main module exposes a single function that is capable of
+parsing lines of SDP, and providing an object allowing you to perform
+operations on those parsed lines:
 
-## Reference
+```js
+var sdp = require('rtc-sdp')(lines);
+```
 
-### addIceCandidate(data)
+The currently supported operations are listed below:
 
-Modify the sdp to include candidates as denoted by the data
+### `addIceCandidate(data)`
 
-### toString() => sdp string
+Modify the sdp to include candidates as denoted by the data.
 
-### `constrain-bandwidth(value, mediaType?) => fn(sdp) => sdp`
+### `toString()`
+
+Convert the SDP structure that is currently retained in memory, into a string
+that can be provided to a `setLocalDescription` (or `setRemoteDescription`)
+WebRTC call.
+
+## Additional Package Functions
+
+There are additional functions included in the module to assign with
+performing "single-shot" SDP filtering (or munging) operations:
+
+### `rtc-sdp/constrain-bandwidth`
+
+```
+fn(value, mediaType?) => fn(sdp) => sdp`
+```
 
 Create a filter function that can apply a `b=AS` line to the supplied SDP.
 

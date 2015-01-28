@@ -1,7 +1,12 @@
 var tools = require('./tools');
 
 /**
-  ### `constrain-bandwidth(value, mediaType?) => fn(sdp) => sdp`
+
+  ### `rtc-sdp/constrain-bandwidth`
+
+  ```
+  fn(value, mediaType?) => fn(sdp) => sdp`
+  ```
 
   Create a filter function that can apply a `b=AS` line to the supplied SDP.
 
