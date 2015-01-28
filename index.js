@@ -100,7 +100,7 @@ module.exports = function(sdp) {
   };
 
   /**
-    ## Additional Package Functions
+    ## SDP Filtering / Munging Functions
 
     There are additional functions included in the module to assign with
     performing "single-shot" SDP filtering (or munging) operations:

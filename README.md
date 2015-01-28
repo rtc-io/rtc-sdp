@@ -29,7 +29,7 @@ Convert the SDP structure that is currently retained in memory, into a string
 that can be provided to a `setLocalDescription` (or `setRemoteDescription`)
 WebRTC call.
 
-## Additional Package Functions
+## SDP Filtering / Munging Functions
 
 There are additional functions included in the module to assign with
 performing "single-shot" SDP filtering (or munging) operations:
