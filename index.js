@@ -67,7 +67,7 @@ module.exports = function(sdp) {
   });
 
   /**
-    ### `addIceCandidate(data)`
+    ### `sdp.addIceCandidate(data)`
 
     Modify the sdp to include candidates as denoted by the data.
 
@@ -84,7 +84,7 @@ module.exports = function(sdp) {
   };
 
   /**
-    ### `toString()`
+    ### `sdp.toString()`
 
     Convert the SDP structure that is currently retained in memory, into a string
     that can be provided to a `setLocalDescription` (or `setRemoteDescription`)

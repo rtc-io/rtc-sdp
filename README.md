@@ -19,11 +19,11 @@ var sdp = require('rtc-sdp')(lines);
 
 The currently supported operations are listed below:
 
-### `addIceCandidate(data)`
+### `sdp.addIceCandidate(data)`
 
 Modify the sdp to include candidates as denoted by the data.
 
-### `toString()`
+### `sdp.toString()`
 
 Convert the SDP structure that is currently retained in memory, into a string
 that can be provided to a `setLocalDescription` (or `setRemoteDescription`)
