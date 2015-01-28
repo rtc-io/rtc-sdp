@@ -19,7 +19,7 @@ Modify the sdp to include candidates as denoted by the data
 
 ### toString() => sdp string
 
-### `constrain-bandwidth(value) => fn(sdp) => sdp`
+### `constrain-bandwidth(value, mediaType?) => fn(sdp) => sdp`
 
 Create a filter function that can apply a `b=AS` line to the supplied SDP.
 
@@ -31,6 +31,26 @@ var quickconnect = require('rtc-quickconnect');
 var conference = quickconnect('https://switchboard.rtc.io', {
   room: 'sdpfilter-test',
   sdpfilter: constrainBandwidth(128)
+});
+
+conference.on('call:started', function(id) {
+  console.log('call started with peer: ' + id);
+});
+
+```
+
+The above example modifies the SDP at the session level.  In cases where you
+need to apply a bandwidth constraint for a specific media type, you will need
+to specify the mediaType as part of the function call:
+
+```js
+var constrainBandwidth = require('rtc-sdp/constrain-bandwidth');
+var quickconnect = require('rtc-quickconnect');
+
+// create a conference with constrained bandwidth
+var conference = quickconnect('https://switchboard.rtc.io', {
+  room: 'sdpfilter-test',
+  sdpfilter: constrainBandwidth(128, 'video')
 });
 
 conference.on('call:started', function(id) {

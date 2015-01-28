@@ -1,11 +1,17 @@
 var tools = require('./tools');
 
 /**
-  ### `constrain-bandwidth(value) => fn(sdp) => sdp`
+  ### `constrain-bandwidth(value, mediaType?) => fn(sdp) => sdp`
 
   Create a filter function that can apply a `b=AS` line to the supplied SDP.
 
   <<< examples/constrain-bandwidth.js
+
+  The above example modifies the SDP at the session level.  In cases where you
+  need to apply a bandwidth constraint for a specific media type, you will need
+  to specify the mediaType as part of the function call:
+
+  <<< examples/constrain-bandwidth-video.js
 
 **/
 module.exports = function(value, mediaType) {
