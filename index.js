@@ -84,6 +84,22 @@ module.exports = function(sdp) {
   };
 
   /**
+    ### `sdp.getMediaTypes() => []`
+
+    Retrieve the list of media types that have been defined in the sdp via
+    `m=` lines.
+  **/
+  ops.getMediaTypes = function() {
+    function getMediaType(data) {
+      return data[1].def.split(/\s/)[0];
+    }
+
+    return parsed.filter(function(parts) {
+      return parts[0] === 'm' && parts[1] && parts[1].def;
+    }).map(getMediaType);
+  };
+
+  /**
     ### `sdp.toString()`
 
     Convert the SDP structure that is currently retained in memory, into a string
