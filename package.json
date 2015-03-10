@@ -1,6 +1,6 @@
 {
   "name": "rtc-sdp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "rtc.io utility module for patching (munging) SDP",
   "main": "index.js",
   "scripts": {
