@@ -23,6 +23,11 @@ The currently supported operations are listed below:
 
 Modify the sdp to include candidates as denoted by the data.
 
+### `sdp.getMediaTypes() => []`
+
+Retrieve the list of media types that have been defined in the sdp via
+`m=` lines.
+
 ### `sdp.toString()`
 
 Convert the SDP structure that is currently retained in memory, into a string
