@@ -100,6 +100,32 @@ module.exports = function(sdp) {
   };
 
   /**
+    ### `sdp.getMediaIDs() => []`
+
+    Returns the list of unique media line IDs that have been defined in the sdp
+    via `a=mid:` lines.
+   **/
+  ops.getMediaIDs = function() {
+    return parsed.filter(function(parts) {
+      return parts[0] === 'm' && parts[1] && parts[1].childlines && parts[1].childlines.length > 0;
+    }).map(function(mediaLine) {
+      var lines = mediaLine[1].childlines;
+      // Default ID to the media type
+      var mediaId = mediaLine[1].def.split(/\s/)[0];
+
+      // Look for the media ID
+      for (var i = 0; i < lines.length; i++) {
+        var tokens = lines[i][1].split(':');
+        if (tokens.length > 0 && tokens[0] === 'mid') {
+          mediaId = tokens[1];
+          break;
+        }
+      }
+      return mediaId;
+    });
+  };
+
+  /**
     ### `sdp.toString()`
 
     Convert the SDP structure that is currently retained in memory, into a string
