@@ -5,7 +5,7 @@ This is a utility module for intepreting and patching sdp.
 
 [![NPM](https://nodei.co/npm/rtc-sdp.png)](https://nodei.co/npm/rtc-sdp/)
 
-[![Build Status](https://img.shields.io/travis/rtc-io/rtc-sdp.svg?branch=master)](https://travis-ci.org/rtc-io/rtc-sdp) [![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/dominictarr/stability#unstable) 
+[![Build Status](https://img.shields.io/travis/rtc-io/rtc-sdp.svg?branch=master)](https://travis-ci.org/rtc-io/rtc-sdp) [![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/dominictarr/stability#unstable)
 
 ## Usage
 
@@ -27,6 +27,11 @@ Modify the sdp to include candidates as denoted by the data.
 
 Retrieve the list of media types that have been defined in the sdp via
 `m=` lines.
+
+### `sdp.getMediaIDs() => []`
+
+Retrieve the list of media IDs that have been defined in the sdp via
+`m=mid` lines.
 
 ### `sdp.toString()`
 
