@@ -3,8 +3,8 @@ var test = require('tape');
 var preferCodecs = require('../prefer-codecs');
 var baseSdp = fs.readFileSync(__dirname + '/fragments/test-audio-video.txt', 'utf8');
 var refSdp = [
-  fs.readFileSync(__dirname + '/output/test-video-codec-preferences.txt', 'utf8'),
-  fs.readFileSync(__dirname + '/output/test-audio-codec-preferences.txt', 'utf8')
+  fs.readFileSync(__dirname + '/output/test-video-codec-preferences.txt', 'utf8').replace(/\n/g, '\r\n'),
+  fs.readFileSync(__dirname + '/output/test-audio-codec-preferences.txt', 'utf8').replace(/\n/g, '\r\n')
 ];
 
 test('can reorder the codec preferences for all media', function(t) {

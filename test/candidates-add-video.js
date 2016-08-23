@@ -3,8 +3,8 @@ var test = require('tape');
 var fs = require('fs');
 var baseSdp = fs.readFileSync(__dirname + '/fragments/test-answer-nocandidates.txt', 'utf8');
 var refSdp = [
-  fs.readFileSync(__dirname + '/output/test-answer-addvideoice1.txt', 'utf8'),
-  fs.readFileSync(__dirname + '/output/test-answer-addvideoice2.txt', 'utf8')
+  fs.readFileSync(__dirname + '/output/test-answer-addvideoice1.txt', 'utf8').replace(/\n/g, '\r\n'),
+  fs.readFileSync(__dirname + '/output/test-answer-addvideoice2.txt', 'utf8').replace(/\n/g, '\r\n')
 ];
 var sdp;
 
