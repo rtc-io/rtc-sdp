@@ -138,7 +138,7 @@ module.exports = function(sdp) {
       return typeof line[1].toArray == 'function' ? line[1].toArray() : [ line ];
     }).reduce(flatten).map(function(line) {
       return line.join('=');
-    }).join('\n');
+    }).join('\r\n') + '\r\n';
   };
 
   /**
