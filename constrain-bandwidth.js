@@ -27,7 +27,7 @@ module.exports = function(value, mediaType) {
 
     // remove existing b=AS lines
     lines = lines.filter(function(line) {
-      return line.slice(0, 3) !== 'b=AS'
+      return line.slice(0, 4) !== 'b=AS'
     });
 
     // find the splice locations for the bandwidth lines
