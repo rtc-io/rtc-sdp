@@ -1,7 +1,7 @@
 var parser = require('./index');
 var tools = require('./tools');
 var ianaCodecs = require('./iana-codecs');
-var reRtpMap = /^rtpmap:([0-9]*)\s*([^\s]*)/ig;
+var reRtpMap = /^rtpmap:([0-9]*)\s*([^\s]*)/i;
 
 /**
 
