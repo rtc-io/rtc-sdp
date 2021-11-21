@@ -1,7 +1,7 @@
 var parser = require('./index');
 var tools = require('./tools');
 var ianaCodecs = require('./iana-codecs');
-var reRtpMap = /^rtpmap:([0-9]*)\s*([^\s]*)/ig;
+var reRtpMap = /^rtpmap:([0-9]*)\s*([^\s]*)/i;
 
 /**
 
@@ -42,10 +42,12 @@ module.exports = function(desiredCodecs, mediaType) {
     // Build the codec definition
     var codec = result[2];
     var typeNum = result[1];
-    r[codec.toUpperCase()] = {
-      num: typeNum,
-      codec: codec
-    }
+    // Use the first appearance of the specific codec, not the last
+    if (!r[codec.toUpperCase()])
+      r[codec.toUpperCase()] = {
+        num: typeNum,
+        codec: codec
+      }
     return r;
   }
 
